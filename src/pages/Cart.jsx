@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import { removeCartItem } from '../redux/slices/cartSlice'
+import { removeCartItem,emptyCart } from '../redux/slices/cartSlice'
 
 
 
@@ -31,7 +31,7 @@ function Cart() {
 
   const handleCheckout = () => {
     alert('Order Placed Successfully')
-    dispatch(emptyCart)
+    dispatch(emptyCart())
     navigate('/')
   }
   return (
